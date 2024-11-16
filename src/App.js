@@ -1,22 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { FaWrench } from "react-icons/fa"; // Import the wrench icon
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <FaWrench className="wrench-icon" />
+        <h1>Hey! This is Arnav Srivastav's Personal Website</h1>
+        <p className="tagline">Work In Progress...</p>
       </header>
     </div>
   );
