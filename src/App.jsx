@@ -7,7 +7,7 @@ import helvetikerFont from 'three/examples/fonts/helvetiker_regular.typeface.jso
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import myPhoto from './arnav.jpg';     // Square image
+import myPhoto from './Arnav.jpg';     // Square image
 import linkedInLogo from './logo.png'; // LinkedIn icon
 import githubLogo from './logo1.png';  // GitHub icon
 import './index.css';
