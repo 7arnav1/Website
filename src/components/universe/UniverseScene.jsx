@@ -65,8 +65,7 @@ export default function UniverseScene({ reducedMotion = false }) {
 
   return (
     <>
-      <color attach="background" args={['#030308']} />
-      <fog attach="fog" args={['#030308', 25, 80]} />
+      <fog attach="fog" args={['#030308', 20, 70]} />
       <ambientLight intensity={1} />
       <StarLayers quality={quality} mouseRef={mouseRef} reducedMotion={reducedMotion} />
       <ProjectOrbs reducedMotion={reducedMotion} />

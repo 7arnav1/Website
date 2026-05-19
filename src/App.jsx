@@ -1,4 +1,4 @@
-import UniverseCanvas from './components/universe/UniverseCanvas';
+import Starfield from './components/universe/Starfield';
 import { UniverseProvider } from './context/UniverseContext';
 import Nav from './components/layout/Nav';
 import Footer from './components/layout/Footer';
@@ -27,7 +27,6 @@ function AppContent() {
   return (
     <>
       <div className="grain" aria-hidden="true" />
-      <UniverseCanvas />
       <a href="#about" className="skip-link">
         Skip to content
       </a>
@@ -54,8 +53,11 @@ function AppContent() {
 
 export default function App() {
   return (
-    <UniverseProvider>
-      <AppContent />
-    </UniverseProvider>
+    <>
+      <Starfield />
+      <UniverseProvider>
+        <AppContent />
+      </UniverseProvider>
+    </>
   );
 }

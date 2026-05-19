@@ -7,6 +7,7 @@
   height: 100dvh;
   z-index: 0;
   pointer-events: auto;
+  background: transparent;
 }
 
 .universe-canvas,
@@ -20,19 +21,12 @@
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(178, 75, 243, 0.15), #030308 70%);
+  background: transparent;
   pointer-events: none;
 }
 
 .universe-fallback--animated {
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 20%, rgba(178, 75, 243, 0.2), #030308 70%),
-    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.35), transparent),
-    radial-gradient(1px 1px at 60% 70%, rgba(255, 255, 255, 0.25), transparent),
-    radial-gradient(1px 1px at 80% 20%, rgba(178, 75, 243, 0.4), transparent),
-    #030308;
-  background-size: 100% 100%, 200px 200px, 240px 240px, 180px 180px;
-  animation: fallback-twinkle 8s ease-in-out infinite alternate;
+  background: transparent;
 }
 
 @keyframes fallback-twinkle {
@@ -47,6 +41,7 @@
 .main-content {
   position: relative;
   z-index: 1;
+  background: transparent;
 }
 
 /* Orb labels (drei Html) */
@@ -147,15 +142,15 @@
 .section--about,
 .section--experience,
 .section--projects {
-  background: rgba(5, 5, 8, 0.72) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(5, 5, 8, 0.48) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .stats-strip {
-  background: rgba(5, 5, 8, 0.78) !important;
-  backdrop-filter: blur(10px);
+  background: rgba(5, 5, 8, 0.55) !important;
+  backdrop-filter: blur(8px);
 }
 
 .hero-scroll,
@@ -164,7 +159,11 @@
 }
 
 .hero-overlay {
-  background: radial-gradient(ellipse 60% 50% at 50% 45%, rgba(5, 5, 8, 0.25), transparent 70%);
+  background: radial-gradient(ellipse 55% 45% at 50% 45%, rgba(5, 5, 8, 0.2), transparent 75%);
+}
+
+.hero-scroll {
+  background: transparent !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

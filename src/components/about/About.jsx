@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { site } from '../../data/site';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import { useIsMobile } from '../../hooks/useIsMobile';
-import myPhoto from '../../Arnav.jpg';
+import myPhoto from '../../portfolio.png';
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -49,7 +49,13 @@ export default function About() {
         <div className="about-split">
           <div className="about-photo-wrap reveal" ref={photoRef}>
             <div className="about-photo-frame">
-              <img src={myPhoto} alt="Arnav Srivastav" className="about-photo" width={320} height={320} />
+              <img
+                src={myPhoto}
+                alt="Arnav Srivastav in UW–Madison graduation regalia"
+                className="about-photo"
+                width={320}
+                height={400}
+              />
             </div>
           </div>
           <div className="about-copy reveal">

@@ -33,7 +33,7 @@ export default function UniverseCanvas() {
   }, [mouseRef]);
 
   if (!webglOk) {
-    return <div className="universe-fallback universe-fallback--animated" aria-hidden="true" />;
+    return null;
   }
 
   const dpr = quality === 'high' ? [1, 1.5] : [1, 1];
@@ -44,8 +44,11 @@ export default function UniverseCanvas() {
         className="universe-canvas"
         camera={{ position: [0, 0, 6], fov: 55, near: 0.1, far: 100 }}
         dpr={dpr}
-        gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
+        gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         frameloop="always"
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0);
+        }}
       >
         <Suspense fallback={null}>
           <UniverseScene reducedMotion={reduced} />
