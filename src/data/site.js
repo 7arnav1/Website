@@ -1,0 +1,20 @@
+export const site = {
+  name: 'Arnav Srivastav',
+  tagline: 'Computer Scientist + Data Scientist',
+  subtitle: 'UW–Madison · B.S. CS & Data Science · May 2026',
+  openTo: 'Open to AI · SWE · TPM · Data Engineering roles',
+  email: 'asrivastav3@wisc.edu',
+  phone: '224-431-8379',
+  domain: 'https://arnavs.tech',
+  github: 'https://github.com/7arnav1',
+  linkedin: 'https://www.linkedin.com/in/arnav-srivastav/',
+  resume: '/resume.pdf',
+  footerQuip: 'Built with curiosity (and too much coffee). Press ? if you’re nosy.',
+  heroEyebrows: [
+    'Open to AI · SWE · TPM · Data Eng',
+    'Builder · ML · APIs',
+    'Product owner · SPONTA',
+    'YesUW President',
+    'CS540 TA · 500+ students',
+  ],
+};

@@ -1,12 +1,31 @@
-# React + Vite
+# Arnav Srivastav — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal site for [arnavs.tech](https://arnavs.tech). Built with React, Vite, Three.js, GSAP, and Lenis.
 
-Currently, two official plugins are available:
+## Develop
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Deploy (Vercel)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Push this repo to GitHub.
+2. Import the project in [Vercel](https://vercel.com).
+3. Framework preset: **Vite** (build: `npm run build`, output: `dist`).
+4. Add custom domain **arnavs.tech** in Project → Settings → Domains and follow DNS instructions.
+
+No `base` path is required for a root domain.
+
+## Stack
+
+- React 19 + Vite 6
+- Three.js / React Three Fiber (persistent scroll-linked universe + project orbs)
+- GSAP ScrollTrigger + Lenis smooth scroll
+- Deployed on Vercel
+
+## Roadmap
+
+- **v1 (current):** Bruno-lite universe — full-viewport starfield, scroll camera, clickable project orbs, glass sections.
+- **v2 (planned):** Hinge-style swipe portfolio layer (documented only; not implemented).

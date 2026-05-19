@@ -1,0 +1,141 @@
+/* CSS project planets — always visible, no WebGL required */
+
+.hero-planets {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-planet-slot {
+  position: absolute;
+  pointer-events: auto;
+  animation: planet-float 5s ease-in-out infinite;
+}
+
+.planet-deco {
+  position: absolute;
+  width: var(--deco-size);
+  height: var(--deco-size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--deco-color), transparent 70%);
+  box-shadow: 0 0 20px var(--deco-color);
+  pointer-events: none;
+  animation: planet-float 6s ease-in-out infinite;
+}
+
+@keyframes planet-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.planet-orb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  transition: transform 0.25s var(--ease-out);
+}
+
+.planet-orb:hover {
+  transform: scale(1.08);
+}
+
+.planet-orb--active .planet-orb-core {
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--planet-color) 50%, transparent),
+    0 0 40px var(--planet-color),
+    0 0 80px color-mix(in srgb, var(--planet-color) 60%, transparent);
+}
+
+.planet-orb-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--planet-size) * 1.8);
+  height: calc(var(--planet-size) * 1.8);
+  transform: translate(-50%, -55%);
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--planet-color) 45%, transparent), transparent 68%);
+  pointer-events: none;
+}
+
+.planet-orb-core {
+  display: block;
+  width: var(--planet-size);
+  height: var(--planet-size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #fff 0%, var(--planet-color) 35%, color-mix(in srgb, var(--planet-color) 80%, #000) 100%);
+  box-shadow:
+    0 0 30px var(--planet-color),
+    0 0 60px color-mix(in srgb, var(--planet-color) 50%, transparent),
+    inset 0 -8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.planet-orb-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 12px var(--planet-color);
+  letter-spacing: 0.04em;
+}
+
+/* Projects section planet row */
+.project-planets-row {
+  text-align: center;
+  margin: 0 auto 2rem;
+  padding: 0 1.5rem;
+  max-width: var(--max-width);
+}
+
+.project-planets-hint {
+  margin: 0 0 1.25rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+.project-planets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 2.5rem;
+}
+
+.project-planets-grid .planet-orb {
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .hero-planet-slot:nth-child(n + 3) {
+    display: none;
+  }
+
+  .hero-planet-slot .planet-orb {
+    transform: scale(0.85);
+  }
+
+  .project-planets-grid {
+    gap: 1.25rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-planet-slot,
+  .planet-deco {
+    animation: none;
+  }
+}

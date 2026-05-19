@@ -1,0 +1,182 @@
+/* Fixed universe behind entire page */
+.universe-canvas-wrap {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.universe-canvas,
+.universe-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.universe-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(178, 75, 243, 0.15), #030308 70%);
+  pointer-events: none;
+}
+
+.universe-fallback--animated {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 20%, rgba(178, 75, 243, 0.2), #030308 70%),
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(255, 255, 255, 0.25), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(178, 75, 243, 0.4), transparent),
+    #030308;
+  background-size: 100% 100%, 200px 200px, 240px 240px, 180px 180px;
+  animation: fallback-twinkle 8s ease-in-out infinite alternate;
+}
+
+@keyframes fallback-twinkle {
+  from {
+    opacity: 0.85;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Orb labels (drei Html) */
+.orb-label {
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  background: rgba(5, 5, 8, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.85);
+  transform: translateY(120%);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.orb-label strong {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.orb-label--hover {
+  border-color: rgba(178, 75, 243, 0.7);
+  background: rgba(5, 5, 8, 0.92);
+}
+
+/* Explore banner */
+.explore-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: rgba(5, 5, 8, 0.9);
+  border: 1px solid rgba(178, 75, 243, 0.45);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: banner-in 0.6s var(--ease-out);
+}
+
+.explore-banner p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.explore-banner-dismiss {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(178, 75, 243, 0.2);
+  color: var(--text);
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: var(--font-display);
+}
+
+.explore-banner-dismiss:hover {
+  border-color: var(--accent);
+}
+
+@keyframes banner-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.nav-quality {
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-family: var(--font-display);
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+
+.nav-quality:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Glass sections — stars + orbs show through gaps */
+.section,
+.section--about,
+.section--experience,
+.section--projects {
+  background: rgba(5, 5, 8, 0.72) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stats-strip {
+  background: rgba(5, 5, 8, 0.78) !important;
+  backdrop-filter: blur(10px);
+}
+
+.hero-scroll,
+.hero-sticky {
+  background: transparent;
+}
+
+.hero-overlay {
+  background: radial-gradient(ellipse 60% 50% at 50% 45%, rgba(5, 5, 8, 0.25), transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explore-banner {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-banner {
+    flex-direction: column;
+    text-align: center;
+    max-width: calc(100% - 2rem);
+  }
+}
