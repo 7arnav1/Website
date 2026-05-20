@@ -7,8 +7,8 @@ import { useUniverse } from '../../context/UniverseContext';
 /* Screen-space layout: x/y spread, z always in front of camera */
 const ORB_LAYOUT = [
   { id: 'sponta', position: [2.2, 0.8, -3], scale: 0.85 },
-  { id: 'justgo', position: [-2.4, 0.3, -3.5], scale: 0.65 },
   { id: 'aivestor', position: [0.5, -1.1, -4], scale: 0.7 },
+  { id: 'justgo', position: [-2.4, 0.3, -3.5], scale: 0.65 },
   { id: 'hive', position: [2.6, -0.6, -4.5], scale: 0.6 },
 ];
 

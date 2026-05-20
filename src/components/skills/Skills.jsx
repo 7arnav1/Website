@@ -15,7 +15,7 @@ export default function Skills() {
   const [active, setActive] = useState('languages');
 
   return (
-    <Section id="skills" title="Technical skills" subtitle="Hover a category to focus.">
+    <Section id="skills" title="Technical skills" subtitle="Hover a group to see the stack.">
       <div className="skills-interactive reveal">
         <div className="skills-tabs" role="tablist">
           {Object.keys(skills).map((group) => (

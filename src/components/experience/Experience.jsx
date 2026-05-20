@@ -4,7 +4,7 @@ import { experience } from '../../data/experience';
 
 export default function Experience() {
   return (
-    <Section id="experience" title="Experience" subtitle="Industry, research, and teaching.">
+    <Section id="experience" title="Experience" subtitle="Work, research, and teaching.">
       <div className="cards-grid experience-grid">
         {experience.map((item) => (
           <TiltCard key={item.id} className="card reveal">

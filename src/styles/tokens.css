@@ -6,8 +6,8 @@
   --accent: #b24bf3;
   --accent-glow: rgba(178, 75, 243, 0.45);
   --border: rgba(255, 255, 255, 0.1);
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-body: 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --max-width: 980px;
   --nav-height: 64px;
   --radius: 14px;

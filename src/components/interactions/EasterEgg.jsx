@@ -1,25 +1,6 @@
-import { useEffect, useState } from 'react';
-import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
+import { useEffect } from 'react';
 
-function burstConfetti() {
-  const container = document.createElement('div');
-  container.className = 'confetti-burst';
-  const colors = ['#b24bf3', '#4da6ff', '#50e3a4', '#ff9f43', '#fff'];
-
-  for (let i = 0; i < 48; i++) {
-    const piece = document.createElement('div');
-    piece.className = 'confetti-piece';
-    piece.style.left = `${Math.random() * 100}%`;
-    piece.style.top = `${-10 + Math.random() * 20}%`;
-    piece.style.background = colors[i % colors.length];
-    piece.style.animationDelay = `${Math.random() * 0.4}s`;
-    piece.style.animationDuration = `${1.2 + Math.random() * 0.8}s`;
-    container.appendChild(piece);
-  }
-
-  document.body.appendChild(container);
-  setTimeout(() => container.remove(), 2200);
-}
+const RICKROLL_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 
 function showToast(message) {
   const el = document.createElement('div');
@@ -31,23 +12,14 @@ function showToast(message) {
 }
 
 export default function EasterEgg() {
-  const [toast, setToast] = useState(false);
-  const reduced = usePrefersReducedMotion();
-
   useEffect(() => {
     let logoClicks = 0;
     let logoTimer;
 
     const onKey = (e) => {
-      if (e.key === '?' && !e.metaKey && !e.ctrlKey) {
-        setToast(true);
-        document.body.classList.add('easter-active');
-        if (!reduced) burstConfetti();
-        if (!reduced) {
-          setTimeout(() => document.body.classList.remove('easter-active'), 2000);
-        }
-        setTimeout(() => setToast(false), 2800);
-      }
+      if (e.key !== '?' || e.metaKey || e.ctrlKey) return;
+      e.preventDefault();
+      window.open(RICKROLL_URL, '_blank', 'noopener,noreferrer');
     };
 
     const onLogoClick = (e) => {
@@ -60,7 +32,6 @@ export default function EasterEgg() {
       }, 1200);
       if (logoClicks >= 5) {
         logoClicks = 0;
-        if (!reduced) burstConfetti();
         showToast('Logo spam unlocked. Respect.');
       }
     };
@@ -72,13 +43,7 @@ export default function EasterEgg() {
       document.removeEventListener('click', onLogoClick);
       clearTimeout(logoTimer);
     };
-  }, [reduced]);
+  }, []);
 
-  if (!toast) return null;
-
-  return (
-    <div className="easter-toast" role="status">
-      You found the secret. Nice.
-    </div>
-  );
+  return null;
 }

@@ -44,7 +44,7 @@ export default function About() {
     <section id="about" className="section section--about" ref={sectionRef}>
       <div className="section-inner about-section-inner">
         <h2 className="section-title">About</h2>
-        <p className="section-subtitle">I build — and I ship products people actually use.</p>
+        <p className="section-subtitle">I like building things people actually open.</p>
 
         <div className="about-split">
           <div className="about-photo-wrap reveal" ref={photoRef}>
@@ -60,18 +60,16 @@ export default function About() {
           </div>
           <div className="about-copy reveal">
             <p>
-              I&apos;m a Computer Science &amp; Data Science student at UW–Madison (May 2026, GPA 3.8,
-              Dean&apos;s List) with a Certificate in Business. I&apos;m a builder who also thinks like a
-              tech product manager — roadmap, stakeholders, and metrics — not just code. I build
-              production ML pipelines, APIs, and full-stack products, from ECG segmentation at
-              Atrility Medical to AI research at SAIL @ N+1.
+              I study computer science and data science at UW–Madison (graduating May 2026,
+              Dean&apos;s List) with a business certificate. I care about the product side as much as
+              the code — who it&apos;s for, what to measure, when to cut scope. Lately that&apos;s meant
+              ECG segmentation at Atrility Medical and LLM work at SAIL @ N+1.
             </p>
             <p>
-              I&apos;ve owned products (SPONTA, RegenMeds capstone), led YesUW as president, and shipped
-              systems that work in the real world: Azure ML at scale, HIPAA-aware healthcare
-              platforms, and mobile apps with 150+ beta users.{' '}
-              <strong>Open to AI, SWE, TPM, and Data Engineering roles</strong> — I build, but I
-              also ship products.
+              I&apos;ve run SPONTA and our RegenMeds capstone, led YesUW, and shipped things that
+              had to work outside a notebook: Azure ML jobs, HIPAA-aware healthcare tooling, and a
+              mobile app with 150+ beta testers.{' '}
+              <strong>Happy to talk about AI, SWE, TPM, or data engineering roles.</strong>
             </p>
             <p className="about-contact-line">
               <a href={`mailto:${site.email}`}>{site.email}</a>

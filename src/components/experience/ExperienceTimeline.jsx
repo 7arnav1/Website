@@ -34,7 +34,7 @@ export default function ExperienceTimeline() {
     <section id="experience" className="section section--experience">
       <div className="section-inner">
         <h2 className="section-title">Experience</h2>
-        <p className="section-subtitle">Industry, research, and teaching.</p>
+        <p className="section-subtitle">Work, research, and teaching.</p>
 
         <div className="timeline">
           <div className="timeline-line" ref={lineRef} aria-hidden="true" />

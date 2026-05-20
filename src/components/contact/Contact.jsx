@@ -7,7 +7,7 @@ export default function Contact() {
     <Section
       id="contact"
       title="Let's connect"
-      subtitle="Open to AI, SWE, TPM, and Data Engineering roles starting 2026."
+      subtitle="Looking for AI, SWE, TPM, or data engineering roles starting 2026."
     >
       <div className="contact-actions reveal">
         <MagneticButton href={`mailto:${site.email}`} className="btn-primary">

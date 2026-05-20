@@ -2,8 +2,8 @@ import { projects } from '../../data/projects';
 
 const HERO_PLANETS = [
   { id: 'sponta', top: '14%', right: '6%', size: 96 },
-  { id: 'justgo', top: '58%', left: '4%', size: 72 },
   { id: 'aivestor', top: '38%', left: '10%', size: 68 },
+  { id: 'justgo', top: '58%', left: '4%', size: 72 },
   { id: 'hive', top: '62%', right: '12%', size: 60 },
 ];
 

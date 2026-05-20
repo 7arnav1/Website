@@ -113,7 +113,7 @@ export default function ProjectShowcase() {
       <div className="section-inner">
         <h2 className="section-title">Projects</h2>
         <p className="section-subtitle">
-          I build products end-to-end — pick a planet or use the gallery below.
+          Tap a planet or scroll the cards below.
         </p>
       </div>
 
@@ -154,6 +154,17 @@ export default function ProjectShowcase() {
                 {p.role} · {p.period}
               </p>
               <p className="project-panel-desc">{p.description}</p>
+              {p.demoVideo && (
+                <div className="project-demo-video">
+                  <video
+                    src={p.demoVideo}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${p.title} demo video`}
+                  />
+                </div>
+              )}
               <div className="project-metrics">
                 {p.metrics.map((m) => (
                   <span key={m} className="metric-chip">
@@ -184,7 +195,7 @@ export default function ProjectShowcase() {
                     rel="noopener noreferrer"
                     className="btn"
                   >
-                    {p.id === 'sponta' ? 'Watch demo →' : 'Live demo →'}
+                    {p.id === 'sponta' || p.demoVideo ? 'Watch demo →' : 'Live demo →'}
                   </MagneticButton>
                 )}
               </div>

@@ -4,7 +4,7 @@ import { leadership } from '../../data/leadership';
 
 export default function Leadership() {
   return (
-    <Section id="leadership" title="Leadership" subtitle="Campus impact beyond the keyboard.">
+    <Section id="leadership" title="Leadership" subtitle="Stuff I do on campus outside of class.">
       <div className="cards-grid">
         {leadership.map((item) => (
           <TiltCard key={item.id} className="card reveal">

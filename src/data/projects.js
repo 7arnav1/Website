@@ -7,7 +7,7 @@ export const flagshipProject = {
   role: 'Product owner & full-stack',
   period: 'Sep 2025 – Present',
   description:
-    'Gamified spontaneity app with daily micro-challenges, streaks, leaderboards, and Gemini-powered camera verification. Built the Express API end-to-end—auth, challenges, events, and AI generation.',
+    'Daily challenges, streaks, and leaderboards — Gemini checks your photo when you complete one. I built the React Native app and the Express API (auth, events, challenges, AI generation).',
   metrics: ['150+ beta users', '65% completion', '600+ AI challenges', '40% daily engagement'],
   tags: ['React Native', 'Node.js', 'Express', 'Firebase', 'Gemini', 'RAG'],
   href: 'https://github.com/7arnav1/SPONTA',
@@ -25,12 +25,27 @@ export const flagshipProject = {
 export const projects = [
   flagshipProject,
   {
+    id: 'aivestor',
+    title: 'AIvestor',
+    role: 'Solo build',
+    period: 'Dec 2024 – Present',
+    description:
+      'Backtests multi-asset portfolios with real commission and slippage, trains a PPO policy on the first 70% of dates, and compares baselines on held-out data. Ships as CLI, FastAPI, and a TypeScript dashboard — Docker and Azure included. Research only; not financial advice.',
+    metrics: ['PPO + Gymnasium', 'FastAPI + Vite UI', 'Train/test split', 'Docker · Azure'],
+    tags: ['Python', 'Stable-Baselines3', 'FastAPI', 'TypeScript', 'Gymnasium', 'Docker'],
+    href: 'https://github.com/7arnav1/AIvestor',
+    demo: 'https://github.com/7arnav1/AIvestor/raw/main/demoVideos/demo-2-dashboard.mp4',
+    demoVideo: 'https://github.com/7arnav1/AIvestor/raw/main/demoVideos/demo-2-dashboard.mp4',
+    accent: '#50e3a4',
+    featured: true,
+  },
+  {
     id: 'justgo',
     title: 'JustGo',
     role: 'AI travel planner',
     period: 'Jun 2025 – Aug 2025',
     description:
-      'Agentic travel assistant with GPT-4o function-calling, Whisper voice, and live data from Maps, Skyscanner, and Viator.',
+      'Talk or type a trip; GPT-4o calls Maps, Skyscanner, and Viator to build an itinerary. Whisper handles voice input.',
     metrics: ['300+ users', '800+ trips', '5k+ API calls'],
     tags: ['React', 'Node.js', 'GPT-4o', 'Whisper', 'FastAPI'],
     href: 'https://github.com/7arnav1',
@@ -39,25 +54,12 @@ export const projects = [
     featured: true,
   },
   {
-    id: 'aivestor',
-    title: 'AIvestor',
-    role: 'Solo project',
-    period: 'Dec 2024 – Present',
-    description:
-      'PPO reinforcement learning on historical market data to model risk, allocation, and portfolio stability.',
-    metrics: ['PPO agent', 'Yahoo Finance', 'Plotly dashboard'],
-    tags: ['Python', 'Stable-Baselines3', 'PPO', 'RL'],
-    href: 'https://github.com/7arnav1/AIvestor',
-    accent: '#50e3a4',
-    featured: true,
-  },
-  {
     id: 'hive',
     title: 'Hive',
     role: 'Open source',
     period: 'Ongoing',
     description:
-      'Contributing to a self-evolving multi-agent framework with HITL, observability, and dynamic graph generation.',
+      'Open-source multi-agent framework — human-in-the-loop flows, observability, and graphs that grow as agents run.',
     metrics: ['Apache 2.0', 'Multi-agent', 'Production-ready'],
     tags: ['Python', 'AI Agents', 'MCP'],
     href: 'https://github.com/7arnav1/hive',
