@@ -59,6 +59,15 @@
   color: var(--text);
 }
 
+.nav-link--hinge {
+  color: #fe3c72 !important;
+  font-weight: 600;
+}
+
+.nav-link--hinge:hover {
+  color: #ff6b9d !important;
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;

@@ -1,3 +1,5 @@
+import spontaHome from '../assets/sponta-home.png';
+
 const SPONTA_SCREENSHOT_BASE =
   'https://raw.githubusercontent.com/7arnav1/SPONTA/final-main/docs/screenshots';
 
@@ -15,7 +17,7 @@ export const flagshipProject = {
   accent: '#b24bf3',
   flagship: true,
   images: [
-    `${SPONTA_SCREENSHOT_BASE}/01.png`,
+    spontaHome,
     `${SPONTA_SCREENSHOT_BASE}/02.png`,
     `${SPONTA_SCREENSHOT_BASE}/03.png`,
     `${SPONTA_SCREENSHOT_BASE}/04.png`,
@@ -48,7 +50,7 @@ export const projects = [
       'Talk or type a trip; GPT-4o calls Maps, Skyscanner, and Viator to build an itinerary. Whisper handles voice input.',
     metrics: ['300+ users', '800+ trips', '5k+ API calls'],
     tags: ['React', 'Node.js', 'GPT-4o', 'Whisper', 'FastAPI'],
-    href: 'https://github.com/7arnav1',
+    href: 'https://github.com/7arnav1/justgo.ai',
     demo: 'https://justgoai.netlify.app',
     accent: '#4da6ff',
     featured: true,

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { site } from '../../data/site';
 import { useUniverse } from '../../context/UniverseContext';
 
@@ -58,6 +59,11 @@ export default function Nav() {
               </a>
             </li>
           ))}
+          <li>
+            <Link to="/v2" className="nav-link nav-link--hinge">
+              Hinge mode
+            </Link>
+          </li>
           <li>
             <button
               type="button"

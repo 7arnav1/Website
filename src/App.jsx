@@ -1,63 +1,71 @@
-import Starfield from './components/universe/Starfield';
-import { UniverseProvider } from './context/UniverseContext';
-import Nav from './components/layout/Nav';
-import Footer from './components/layout/Footer';
-import Hero from './components/hero/Hero';
-import StatsStrip from './components/ui/StatsStrip';
-import About from './components/about/About';
-import Education from './components/education/Education';
-import ExperienceTimeline from './components/experience/ExperienceTimeline';
-import Leadership from './components/leadership/Leadership';
-import ProjectShowcase from './components/projects/ProjectShowcase';
-import Skills from './components/skills/Skills';
-import Contact from './components/contact/Contact';
-import ExploreBanner from './components/interactions/ExploreBanner';
-import CursorGlow from './components/interactions/CursorGlow';
-import CursorTrail from './components/interactions/CursorTrail';
-import EasterEgg from './components/interactions/EasterEgg';
-import { usePrefersReducedMotion } from './hooks/usePrefersReducedMotion';
-import { useLenisScroll } from './hooks/useLenisScroll';
-import { useScrollAnimations } from './hooks/useScrollAnimations';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-function AppContent() {
-  const reducedMotion = usePrefersReducedMotion();
-  useLenisScroll(reducedMotion);
-  useScrollAnimations(reducedMotion);
+const V1Portfolio = lazy(() => import('./routes/V1Portfolio'));
+const V2HingeShell = lazy(() => import('./routes/V2HingeShell'));
+const ProfileTab = lazy(() => import('./routes/v2/ProfileTab'));
+const EducationTab = lazy(() => import('./routes/v2/EducationTab'));
+const ExperienceTab = lazy(() => import('./routes/v2/ExperienceTab'));
+const ProjectsTab = lazy(() => import('./routes/v2/ProjectsTab'));
+const ContactTab = lazy(() => import('./routes/v2/ContactTab'));
 
+function PageFallback() {
   return (
-    <>
-      <div className="grain" aria-hidden="true" />
-      <a href="#about" className="skip-link">
-        Skip to content
-      </a>
-      <ExploreBanner />
-      <CursorGlow />
-      <CursorTrail />
-      <Nav />
-      <main className="main-content">
-        <Hero />
-        <StatsStrip />
-        <About />
-        <Education />
-        <ExperienceTimeline />
-        <Leadership />
-        <ProjectShowcase />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-      <EasterEgg />
-    </>
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: '#050508',
+        color: '#f5f5f7',
+      }}
+    >
+      Loading…
+    </div>
+  );
+}
+
+function V2Fallback() {
+  return (
+    <div
+      className="hinge-app"
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: '#fff',
+      }}
+    >
+      Loading…
+    </div>
   );
 }
 
 export default function App() {
   return (
-    <>
-      <Starfield />
-      <UniverseProvider>
-        <AppContent />
-      </UniverseProvider>
-    </>
+    <BrowserRouter>
+      <Suspense fallback={<PageFallback />}>
+        <Routes>
+          <Route path="/" element={<V1Portfolio />} />
+          <Route
+            path="/v2"
+            element={
+              <Suspense fallback={<V2Fallback />}>
+                <V2HingeShell />
+              </Suspense>
+            }
+          >
+            <Route index element={<ProfileTab />} />
+            <Route path="education" element={<EducationTab />} />
+            <Route path="experience" element={<ExperienceTab />} />
+            <Route path="projects" element={<ProjectsTab />} />
+            <Route path="contact" element={<ContactTab />} />
+          </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }

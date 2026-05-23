@@ -25,7 +25,16 @@ No `base` path is required for a root domain.
 - GSAP ScrollTrigger + Lenis smooth scroll
 - Deployed on Vercel
 
-## Roadmap
+## Hinge mode (`/v2`)
 
-- **v1 (current):** Bruno-lite universe — full-viewport starfield, scroll camera, clickable project orbs, glass sections.
-- **v2 (planned):** Hinge-style swipe portfolio layer (documented only; not implemented).
+Pixel-faithful Hinge UI parody with five bottom tabs:
+
+| Bottom icon | Tab | Route | Description |
+|-------------|-----|-------|-------------|
+| H | Profile | `/v2` | Hinge profile feed (filters, photos, prompts) — uses `Arnav.jpg` + `portfolio.png` |
+| ★ | Experience | `/v2/experience` | Matches-style accordion |
+| ♥ | Projects | `/v2/projects` | Standouts cards — **X** for next project |
+| 💬 | Education | `/v2/education` | My Hinge / Get more layout |
+| Avatar | Contact | `/v2/contact` | Likes You + resume CTA |
+
+Use **`/`** for applications; `/v2` is the memorable demo.
