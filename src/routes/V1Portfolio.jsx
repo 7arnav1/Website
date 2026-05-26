@@ -15,6 +15,7 @@ import ExploreBanner from '../components/interactions/ExploreBanner';
 import CursorGlow from '../components/interactions/CursorGlow';
 import CursorTrail from '../components/interactions/CursorTrail';
 import EasterEgg from '../components/interactions/EasterEgg';
+import PortfolioModeGate from '../components/interactions/PortfolioModeGate';
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import { useLenisScroll } from '../hooks/useLenisScroll';
 import { useScrollAnimations } from '../hooks/useScrollAnimations';
@@ -26,6 +27,7 @@ function V1Content() {
 
   return (
     <>
+      <PortfolioModeGate />
       <div className="grain" aria-hidden="true" />
       <a href="#about" className="skip-link">
         Skip to content
